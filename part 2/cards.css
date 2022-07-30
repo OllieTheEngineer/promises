@@ -1,0 +1,28 @@
+
+.container {
+    background-color: green;
+    text-align: center;
+}
+
+button{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 7px;
+}
+
+button:hover {
+    background-color: grey;
+    color: black;
+}
+
+.cards > img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.cards {
+    margin-top: 70px;
+}
