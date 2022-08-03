@@ -9,12 +9,26 @@
 
 // console.log(randomCard);
 
-let deckURL = "http://deckofcardsapi.com/api/deck/draw/?count=2";
-let randomCard;
+let deckURL = "https://deckofcardsapi.com/api/deck";
 
-$.getJSON(`${deckURL}`)
+$.getJSON(`${deckURL}/draw/`)
     .then( data =>{
-    randomCard = data;
+        let {suit, value} = data.cards[0];
+        console.log (`${value} of ${suit}`);
 });
-
-console.log(randomCard);
+3
+let cardOne;
+$.getJSON(`${deckURL}/draw/`)
+    .then(data =>{
+        cardOne = data.cards[0];
+        let cardId = data.card_id;
+        return $.getJSON(`${deckURL}/${cardId}/draw/`);
+    })
+    .then(data =>{
+        let cardTwo = data.cards[0];
+        let cards;
+        for(let card of cards){
+            card += cardTwo;
+            console.log(`${card.value} of ${card.suit}`)
+        };
+    });
